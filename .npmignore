@@ -1,0 +1,10 @@
+.history
+.vscode
+node_modules
+public
+.eslintrc.js
+.eslintignore
+.gitignore
+.prettierrc.json
+package-lock.json
+vue.config.js
