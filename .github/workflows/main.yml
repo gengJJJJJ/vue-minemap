@@ -16,13 +16,13 @@ jobs:
             # 拉取代码
             - name: Checkout
               uses: actions/checkout@v2
-              with:
+              with: null
               fetch-depth: 0
 
             # 设置 Node.js 版本
             - name: Setup Node.js environment
               uses: actions/setup-node@v1
-              with:
+              with: null
               node-version: '16.13.0'
               cache: 'npm'
 
