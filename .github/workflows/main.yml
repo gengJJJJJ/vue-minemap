@@ -41,9 +41,9 @@ jobs:
             #- name: Install dependencies
             # if: steps.npm-cache.outputs.cache-hit != 'true'
             # run: npm ci
-            - name: Install dependencies in doc folder
-              working-directory: doc
-              run: npm install
+            #- name: Install dependencies in doc folder
+            #  working-directory: doc
+            #  run: npm install
             # 生成静态文件
             - name: Build VuePress docs
               working-directory: doc
