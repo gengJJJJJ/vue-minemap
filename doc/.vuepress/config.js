@@ -1,23 +1,32 @@
 module.exports = {
-	title: 'Cleaner', // 网站标题
-	description: '个人网站',
+	title: 'v-minemap', // 网站标题
+	description: 'v-minemap文档',
 	head: [
-		// 注入到当前页面的 HTML <head> 中的标签
 		['link', {rel: 'icon', href: '/favicon.ico'}] // 增加网页标签图标)
 	],
 	base: '/',
+	lang: 'zh-CN',
 	themeConfig: {
 		nav: [
 			// 导航栏配置
-			{
-				text: 'java',
-				link: '/java/',
-				items: [
-					{text: 'JVM', link: '/'},
-					{text: '并发编程', link: '/'}
-				]
-			},
-			{text: '书籍', link: '/books/'}
-		]
+			{text: '文档', link: '../books/VCircle'},
+			{text: 'Github', link: 'https://github.com/gengJJJJJ/vue-minemap'}
+		],
+		sidebar: {
+			'/books/': [
+				{
+					text: 'books',
+					collapsable: false,
+					children: [
+						'VCircle.md',
+						'VCluster.md',
+						'VMarker.md',
+						'VPolygon.md',
+						'VPopup.md',
+						'VRangeCircle.md'
+					]
+				}
+			]
+		}
 	}
 }

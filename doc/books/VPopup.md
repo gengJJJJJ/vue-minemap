@@ -1,9 +1,13 @@
-### demo
+### 信息窗体
 
 ```html
 <template>
 	<v-map class="home">
-		<v-popup ref="popup" :visible="show" :position="position" :option="option">
+		<v-popup
+			ref="popup"
+			:visible="show"
+			:position="position"
+			:option="option">
 			<div>
 				自定义
 				<div>{{ data.name }}</div>

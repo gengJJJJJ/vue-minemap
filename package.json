@@ -5,6 +5,7 @@
 	"author": {
 		"name": "GengJJJJJ"
 	},
+	"homepage": "https://github.com/GengJJJJJ/v-minemap",
 	"description": "Vue2 地图组件库，基于四维地图minemap SDK 封装",
 	"license": "MIT",
 	"main": "dist/v-minemap.umd.js",
