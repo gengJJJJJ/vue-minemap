@@ -23,3 +23,5 @@ pnpm-debug.log*
 *.sw?
 .history
 .temp
+doc/.vuepress/dist
+doc/node_modules

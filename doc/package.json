@@ -1,0 +1,19 @@
+{
+	"name": "v-minemap",
+	"version": "1.0.4",
+	"private": false,
+	"author": {
+		"name": "GengJJJJJ"
+	},
+	"homepage": "https://github.com/GengJJJJJ/v-minemap",
+	"description": "Vue-minemap 地图组件库文档",
+	"license": "MIT",
+	"scripts": {
+		"dev": "vuepress dev  --temp .temp",
+		"build": "vuepress build"
+	},
+	"dependencies": {
+		"vuepress": "^1.9.10"
+	},
+	"devDependencies": {}
+}

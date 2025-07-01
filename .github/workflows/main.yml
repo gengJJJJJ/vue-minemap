@@ -6,6 +6,8 @@ on:
     push:
         branches:
             - main
+        paths:
+            - 'doc/books/**'
 
 # 任务
 jobs:
@@ -27,22 +29,25 @@ jobs:
                   cache: 'npm'
 
             # 缓存 node_modules
-            - name: Cache dependencies
-              uses: actions/cache@v3
-              id: npm-cache
-              with:
-                  path: 'node_modules'
-                  key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-npm-
+            #- name: Cache dependencies
+            #  uses: actions/cache@v3
+            #  id: npm-cache
+            #  with:
+            #      path: 'node_modules'
+            #      key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+            #      restore-keys: |
+            #         ${{ runner.os }}-npm-
             # 如果缓存没有命中，安装依赖
-            - name: Install dependencies
-              if: steps.npm-cache.outputs.cache-hit != 'true'
-              run: npm ci
-
+            #- name: Install dependencies
+            # if: steps.npm-cache.outputs.cache-hit != 'true'
+            # run: npm ci
+            - name: Install dependencies in doc folder
+              working-directory: doc
+              run: npm install
             # 生成静态文件
             - name: Build VuePress docs
-              run: npm run doc:build
+              working-directory: doc
+              run: npm run build
 
             # 部署到 GitHub Pages
             - name: Deploy to GitHub Pages
@@ -51,4 +56,4 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # ACCESS_TOKEN 是创建的 Secret 名称
               with:
                   target-branch: gh-pages # 部署到 gh-pages 分支，main 分支存放的是项目源码，而 gh-pages 分支则用来存放生成的静态文件
-                  build_dir: doc/.vuepress/dist # vuepress 生成的静态文件存放的地方
+                  build_dir: ./doc/.vuepress/dist # vuepress 生成的静态文件存放的地方
