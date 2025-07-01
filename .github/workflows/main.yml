@@ -44,10 +44,7 @@ jobs:
             - name: Install dependencies in doc folder
               working-directory: doc
               run: npm install
-            - name: Debug List files in doc/books/
-              run: ls -la doc/books/
-            - name: Debug Show current path
-              run: pwd
+
             # 生成静态文件
             - name: Build VuePress docs
               working-directory: doc

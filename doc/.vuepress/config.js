@@ -4,12 +4,12 @@ module.exports = {
 	head: [
 		['link', {rel: 'icon', href: '/favicon.ico'}] // 增加网页标签图标)
 	],
-	base: '/',
+	base: '/vue-minemap/',
 	lang: 'zh-CN',
 	themeConfig: {
 		nav: [
 			// 导航栏配置
-			{text: '文档', link: '../books/VCircle'},
+			{text: '文档', link: '/books/VCircle'},
 			{text: 'Github', link: 'https://github.com/gengJJJJJ/vue-minemap'}
 		],
 		sidebar: {
