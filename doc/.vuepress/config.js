@@ -20,7 +20,7 @@ module.exports = {
 					children: [
 						'VCircle.md',
 						'VCluster.md',
-						'VMarker.md',
+						'VMarkers.md',
 						'VPolygon.md',
 						'VPopup.md',
 						'VRangeCircle.md'
