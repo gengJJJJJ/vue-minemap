@@ -25,48 +25,47 @@
 </template>
 
 <script>
-	import VMap from '../map/VMap.vue'
-	import VPolygon from '../map/VPolygon.vue'
+	import {VMap, VPolygon} from 'v-minemap'
 	export default {
 		components: {VMap, VPolygon},
 		data() {
 			return {
 				show: false,
 				data: {},
-                jsonData: {
-				'type': 'FeatureCollection',
-				'features': [
-					{
-						'type': 'Feature',
-						'geometry': {
-							'type': 'Polygon',
-							'coordinates': [
-								[
-									[113.02447, 23.06947],
-									[113.02447, 23.06947 + 0.105],
-									[113.02447 - 0.106, 23.06947 + 0.105],
-									[113.02447 - 0.106, 23.06947],
-									[113.02447, 23.06947]
+				jsonData: {
+					'type': 'FeatureCollection',
+					'features': [
+						{
+							'type': 'Feature',
+							'geometry': {
+								'type': 'Polygon',
+								'coordinates': [
+									[
+										[113.02447, 23.06947],
+										[113.02447, 23.06947 + 0.105],
+										[113.02447 - 0.106, 23.06947 + 0.105],
+										[113.02447 - 0.106, 23.06947],
+										[113.02447, 23.06947]
+									]
 								]
-							]
+							}
 						}
+					]
+				},
+				option: {
+					sourceName: 'polygonSource',
+					'paint': {
+						'fill-color': '#0087FF',
+						'fill-opacity': 0.7,
+						'fill-outline-color': '#0067C2'
 					}
-				]
-			},
-                option: {
-				sourceName: 'polygonSource',
-				'paint': {
-					'fill-color': '#0087FF',
-					'fill-opacity': 0.7,
-					'fill-outline-color': '#0067C2'
 				}
-			}
 			}
 		},
 		mounted() {},
 		methods: {
 			clusterClick() {
-                this.$refs.polygon.initPolygon(this.jsonData)
+				this.$refs.polygon.initPolygon(this.jsonData)
 				this.show = !this.show
 			}
 		}
@@ -83,7 +82,7 @@
 
 ### 配置项
 
-| props     | 类型    | 描述                                                         |
+| props | 类型 | 描述 |
 | --- | --- | --- |
 | visible | Boolean | 是否可见 |
 | option | Object | 额外配置项，见下方详细 |
@@ -93,16 +92,16 @@
 
 **option**
 
-| props      | 类型   | 描述                                                         |
-| ---------- | ------ | ------------------------------------------------------------ |
-| sourceName | String | 图层数据源名称                                               |
-| paint      | Object | 图层绘制样式                                                 |
-| layout     | Object | 图层布局样式                                                 |
-| minzoom    | String | 图层的最小缩放等级（0-24）                                   |
-| maxzoom    | String | 图层的最大缩放等级（0-24）                                   |
-| beforeId   | String | 坐标转换，可选（bd09togcj02，gcj02tobd09，wgs84togcj02，gcj02towgs84） |
-| lngName    | String | 当geoData为接口数据而不是标准geoJson格式时，经度对应的字段名称 |
-| latName    | String | 当geoData为接口数据而不是标准geoJson格式时，纬度对应的字段名称 |
+| props | 类型 | 描述 |
+| --- | --- | --- |
+| sourceName | String | 图层数据源名称 |
+| paint | Object | 图层绘制样式 |
+| layout | Object | 图层布局样式 |
+| minzoom | String | 图层的最小缩放等级（0-24） |
+| maxzoom | String | 图层的最大缩放等级（0-24） |
+| beforeId | String | 坐标转换，可选（bd09togcj02，gcj02tobd09，wgs84togcj02，gcj02towgs84） |
+| lngName | String | 当geoData为接口数据而不是标准geoJson格式时，经度对应的字段名称 |
+| latName | String | 当geoData为接口数据而不是标准geoJson格式时，纬度对应的字段名称 |
 
 **geoData**
 
@@ -174,4 +173,3 @@
 	]
 },
 ```
-

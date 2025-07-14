@@ -25,56 +25,55 @@
 </template>
 
 <script>
-	import VMap from '../map/VMap.vue'
-	import VRangeCircle from '../map/VRangeCircle.vue'
+	import {VMap, VRangeCircle} from 'v-minemap'
 	export default {
 		components: {VMap, VRangeCircle},
 		data() {
 			return {
 				show: false,
 				data: {},
-                option: {
-				paint: [
-					{
-						'radius': 35,
-						'color': '#cc32f2',
-						'opacity': 0.8
-					},
-					{
-						'radius': 25,
-						'color': '#31fd31',
-						'opacity': 0.8
-					},
-					{
-						'radius': 10,
-						'color': '#ff0000',
-						'opacity': 0.8
-					}
-				],
-				sourceName: 'pointSource'
-			},
-                jsonData: {
-				'type': 'FeatureCollection',
-				'features': [
-					{
-						'type': 'Feature',
-						'geometry': {
-							'type': 'Point',
-							'coordinates': [113.02447, 23.06947]
+				option: {
+					paint: [
+						{
+							'radius': 35,
+							'color': '#cc32f2',
+							'opacity': 0.8
 						},
-						'properties': {
-							'title': '大学',
-							'kind': 'school'
+						{
+							'radius': 25,
+							'color': '#31fd31',
+							'opacity': 0.8
+						},
+						{
+							'radius': 10,
+							'color': '#ff0000',
+							'opacity': 0.8
 						}
-					}
-				]
-			},
+					],
+					sourceName: 'pointSource'
+				},
+				jsonData: {
+					'type': 'FeatureCollection',
+					'features': [
+						{
+							'type': 'Feature',
+							'geometry': {
+								'type': 'Point',
+								'coordinates': [113.02447, 23.06947]
+							},
+							'properties': {
+								'title': '大学',
+								'kind': 'school'
+							}
+						}
+					]
+				}
 			}
 		},
 		mounted() {},
 		methods: {
 			clusterClick() {
-                this.$refs.circle.initCircle(this.jsonData)
+				this.$refs.circle.initCircle(this.jsonData)
 				this.show = !this.show
 			}
 		}
@@ -91,7 +90,7 @@
 
 ### 配置项
 
-| props     | 类型    | 描述                                                         |
+| props | 类型 | 描述 |
 | --- | --- | --- |
 | visible | Boolean | 是否可见 |
 | option | Object | 额外配置项，见下方详细 |
@@ -101,15 +100,15 @@
 
 **option**
 
-| props      | 类型   | 描述                                                         |
-| ---------- | ------ | ------------------------------------------------------------ |
-| sourceName | String | 图层数据源名称                                               |
-| paint      | Array  | 图层绘制样式，多个元素则多个图层，最靠前则在最底层           |
-| minzoom    | String | 图层的最小缩放等级（0-24）                                   |
-| maxzoom    | String | 图层的最大缩放等级（0-24）                                   |
-| beforeId   | String | 坐标转换，可选（bd09togcj02，gcj02tobd09，wgs84togcj02，gcj02towgs84） |
-| lngName    | String | 当geoData为接口数据而不是标准geoJson格式时，经度对应的字段名称 |
-| latName    | String | 当geoData为接口数据而不是标准geoJson格式时，纬度对应的字段名称 |
+| props | 类型 | 描述 |
+| --- | --- | --- |
+| sourceName | String | 图层数据源名称 |
+| paint | Array | 图层绘制样式，多个元素则多个图层，最靠前则在最底层 |
+| minzoom | String | 图层的最小缩放等级（0-24） |
+| maxzoom | String | 图层的最大缩放等级（0-24） |
+| beforeId | String | 坐标转换，可选（bd09togcj02，gcj02tobd09，wgs84togcj02，gcj02towgs84） |
+| lngName | String | 当geoData为接口数据而不是标准geoJson格式时，经度对应的字段名称 |
+| latName | String | 当geoData为接口数据而不是标准geoJson格式时，纬度对应的字段名称 |
 
 **geoData**
 
@@ -183,4 +182,3 @@
 	]
 },
 ```
-

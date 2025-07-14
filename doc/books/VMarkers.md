@@ -44,8 +44,7 @@
 </template>
 
 <script>
-	import VMap from '../map/VMap.vue'
-	import VMarker from '../map/VMarker.vue'
+	import {VMap, VMarker} from 'v-minemap'
 	export default {
 		components: {VMap, VMarker},
 		data() {

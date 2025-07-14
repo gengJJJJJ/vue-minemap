@@ -29,44 +29,43 @@
 </template>
 
 <script>
-	import VMap from '../map/VMap.vue'
-	import VCircle from '../map/VCircle.vue'
+	import {VMap, VCircle} from 'v-minemap'
 	export default {
 		components: {VMap, VCircle},
 		data() {
 			return {
 				show: false,
 				data: {},
-                option: {
-				sourceName: 'pointSource',
-				'paint': {
-					'circle-radius': 40,
-					'circle-color': '#f43112',
-					'circle-opacity': 0.8
-				}
-			},
-                jsonData: {
-				'type': 'FeatureCollection',
-				'features': [
-					{
-						'type': 'Feature',
-						'geometry': {
-							'type': 'Point',
-							'coordinates': [113.02447, 23.06947]
-						},
-						'properties': {
-							'title': '大学',
-							'kind': 'school'
-						}
+				option: {
+					sourceName: 'pointSource',
+					'paint': {
+						'circle-radius': 40,
+						'circle-color': '#f43112',
+						'circle-opacity': 0.8
 					}
-				]
-			},
+				},
+				jsonData: {
+					'type': 'FeatureCollection',
+					'features': [
+						{
+							'type': 'Feature',
+							'geometry': {
+								'type': 'Point',
+								'coordinates': [113.02447, 23.06947]
+							},
+							'properties': {
+								'title': '大学',
+								'kind': 'school'
+							}
+						}
+					]
+				}
 			}
 		},
 		mounted() {},
 		methods: {
 			clusterClick() {
-                this.$refs.circle.initCircle(this.jsonData)
+				this.$refs.circle.initCircle(this.jsonData)
 				this.show = !this.show
 				this.position = [113.52447 + Math.random(10), 23.06947]
 			}
@@ -84,7 +83,7 @@
 
 ### 配置项
 
-| props     | 类型    | 描述                                                         |
+| props | 类型 | 描述 |
 | --- | --- | --- |
 | visible | Boolean | 是否可见 |
 | option | Object | 额外配置项 |

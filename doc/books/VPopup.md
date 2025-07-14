@@ -29,8 +29,7 @@
 </template>
 
 <script>
-	import VMap from '../map/VMap.vue'
-	import VPopup from '../map/VPopup.vue'
+	import {VMap, VPopup} from 'v-minemap'
 	export default {
 		components: {VMap, VPopup},
 		data() {

@@ -1,3 +1,5 @@
+### 快速开始
+
 ### 安装使用
 
 组件使用了coordtransform去转换经纬度，所以也要下载
@@ -36,10 +38,6 @@ export default {
 	components: {VMap, VMarker}
 }
 ```
-
-### 文档
-
-[文档](https://gengjjjjj.github.io/vue-minemap/books/VCircle.html)
 
 ### 注意
 
