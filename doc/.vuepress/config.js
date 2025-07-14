@@ -18,6 +18,7 @@ module.exports = {
 					text: 'books',
 					collapsable: false,
 					children: [
+						'index.md',
 						'VCircle.md',
 						'VCluster.md',
 						'VMarkers.md',
